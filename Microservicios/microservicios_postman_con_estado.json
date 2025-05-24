@@ -1,0 +1,267 @@
+{
+  "info": {
+    "name": "Microservicios - Datanode (actualizado con cambio de estado en Pedido)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Carrito (8081)",
+      "item": [
+        {
+          "name": "Agregar \u00edtem al carrito",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"usuarioId\": 1, \"productoId\": 6, \"nombre\": \"Mouse Gamer\", \"cantidad\": 2, \"precio\": 22990}"
+            },
+            "url": {
+              "raw": "http://localhost:8081/api/carritos",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "api",
+                "carritos"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Listar \u00edtems por usuario",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8081/api/carritos/usuario/1",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "api",
+                "carritos",
+                "usuario",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Vaciar carrito",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "http://localhost:8081/api/carritos/usuario/1",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "api",
+                "carritos",
+                "usuario",
+                "1"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Usuario (8082)",
+      "item": [
+        {
+          "name": "Crear usuario",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"nombre\": \"Diego\", \"correo\": \"diego@correo.cl\", \"rol\": \"admin\"}"
+            },
+            "url": {
+              "raw": "http://localhost:8082/api/usuarios",
+              "host": [
+                "localhost"
+              ],
+              "port": "8082",
+              "path": [
+                "api",
+                "usuarios"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Listar usuarios",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8082/api/usuarios",
+              "host": [
+                "localhost"
+              ],
+              "port": "8082",
+              "path": [
+                "api",
+                "usuarios"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Pedido (8083)",
+      "item": [
+        {
+          "name": "Listar pedidos",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8083/api/pedido",
+              "host": [
+                "localhost"
+              ],
+              "port": "8083",
+              "path": [
+                "api",
+                "pedido"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Confirmar pedido (usuarioId = 1)",
+          "request": {
+            "method": "PUT",
+            "url": {
+              "raw": "http://localhost:8083/api/pedido/confirmar/1",
+              "host": [
+                "localhost"
+              ],
+              "port": "8083",
+              "path": [
+                "api",
+                "pedido",
+                "confirmar",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Cambiar estado de pedido (id = 1 \u2192 ENVIADO)",
+          "request": {
+            "method": "PUT",
+            "url": {
+              "raw": "http://localhost:8083/api/pedido/1/estado?estado=ENVIADO",
+              "host": [
+                "localhost"
+              ],
+              "port": "8083",
+              "path": [
+                "api",
+                "pedido",
+                "1",
+                "estado"
+              ],
+              "query": [
+                {
+                  "key": "estado",
+                  "value": "ENVIADO"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Producto (8084)",
+      "item": [
+        {
+          "name": "Crear producto (Mouse Gamer)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"nombre\": \"Mouse Gamer\", \"descripcion\": \"Mouse ergon\\u00f3mico con 6 botones programables y retroiluminaci\\u00f3n RGB\", \"precio\": 22990, \"stock\": 50}"
+            },
+            "url": {
+              "raw": "http://localhost:8084/api/productos",
+              "host": [
+                "localhost"
+              ],
+              "port": "8084",
+              "path": [
+                "api",
+                "productos"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Listar productos",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8084/api/productos",
+              "host": [
+                "localhost"
+              ],
+              "port": "8084",
+              "path": [
+                "api",
+                "productos"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Actualizar stock producto ID 6 (-2)",
+          "request": {
+            "method": "PUT",
+            "url": {
+              "raw": "http://localhost:8084/api/productos/6/stock?cantidad=2",
+              "host": [
+                "localhost"
+              ],
+              "port": "8084",
+              "path": [
+                "api",
+                "productos",
+                "6",
+                "stock"
+              ],
+              "query": [
+                {
+                  "key": "cantidad",
+                  "value": "2"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
