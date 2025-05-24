@@ -1,12 +1,13 @@
 Proyecto: Transformación Digital - Perfulandia SPA Este repositorio contiene el desarrollo técnico del sistema basado en microservicios para la empresa Perfulandia SPA, como parte de la Evaluación Parcial 2 de la asignatura Desarrollo Full Stack I.
 
 Descripción General del Proyecto: Explicar brevemente en qué consiste el sistema, qué problema resuelve y qué beneficios ofrece al reemplazar el antiguo sistema monolítico.
+El sistema presentado es para resolver los problemas actuales de Perfulandia, el cual maneja sus usuarios, productos, el carro de compras de los usuarios y pedidos. El objetivo de cambiar el modelo original que usaba perfulandia, es para poder mejorar el rendimiento
 
 Microservicios Desarrollados:
-- usuarioservice: Describir qué funcionalidades ofrece este microservicio.
-- productoservice: Describir qué funcionalidades ofrece este microservicio.
-- carritoservice: Describir qué funcionalidades ofrece este microservicio.
-- ________service: Indicar el nombre y función del microservicio adicional implementado.
+- UsuarioService: Describir qué funcionalidades ofrece este microservicio.
+- ProductoService: Describir qué funcionalidades ofrece este microservicio.
+- CarritoService: Describir qué funcionalidades ofrece este microservicio.
+- PedidoService: Indicar el nombre y función del microservicio adicional implementado.
 
 Tecnologías Utilizadas:
 - Mysql
@@ -21,16 +22,16 @@ Endpoints y Pruebas Especificar los principales endpoints disponibles por micros
 Integrantes del Equipo:
 Diego Carrillo/Eric Saavedra - usuarioservice 
 Diego Carrillo/Eric Saavedra - productoservice 
-_____________________ - carritoservice
-_____________________ - ______service
+_____________________ - CarritoService
+_____________________ - PedidoService
 
 Estructura del Repositorio Cada carpeta corresponde a un microservicio separado de forma individual, lo cual facilita su lectura, y evita confusion entre servicios.
 
 perfulandia-microservices 
-├── usuarioservice 
-├── productoservice 
-├── carritoservice 
-├── _______service
+├── UsuarioService 
+├── ProductoService 
+├── CarritoService 
+├── PedidoService
 └── README.md
 
 Colaboración en GitHub:
