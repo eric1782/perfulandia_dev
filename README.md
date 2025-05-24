@@ -1,13 +1,12 @@
-Proyecto: Transformación Digital - Perfulandia SPA Este repositorio contiene el desarrollo técnico del sistema basado en microservicios para la empresa Perfulandia SPA, como parte de la Evaluación Parcial 2 de la asignatura Desarrollo Full Stack I.
+Proyecto: Transformación Digital - Perfulandia SPA Este repositorio contiene el desarrollo técnico del sistema basado en microservicios para la empresa Perfulandia SPA, como parte de la Evaluación Parcial 2 de la asignatura Desarrollo Full Stack I. Al igual que un archivo extra para poder manejar dentro de Postman, el cual permite facilmente manejar las funcionalidades de cada microservicio.
 
-Descripción General del Proyecto: Explicar brevemente en qué consiste el sistema, qué problema resuelve y qué beneficios ofrece al reemplazar el antiguo sistema monolítico.
-El sistema presentado es para resolver los problemas actuales de Perfulandia, el cual maneja sus usuarios, productos, el carro de compras de los usuarios y pedidos. El objetivo de cambiar el modelo original que usaba perfulandia, es para poder mejorar el rendimiento
+Descripción General del Proyecto: El sistema presentado es para resolver los problemas actuales de Perfulandia, el cual maneja sus usuarios, productos, el carro de compras de los usuarios y pedidos. El objetivo de cambiar el modelo original que usaba perfulandia, es para poder mejorar el rendimiento, la escalabilidad y mantenibilidad.
 
 Microservicios Desarrollados:
-- UsuarioService: Describir qué funcionalidades ofrece este microservicio.
-- ProductoService: Describir qué funcionalidades ofrece este microservicio.
-- CarritoService: Describir qué funcionalidades ofrece este microservicio.
-- PedidoService: Indicar el nombre y función del microservicio adicional implementado.
+- UsuarioService: Este microservicio maneja los usuarios, pudiendo crear, borrar y actualizar usuarios.
+- ProductoService: Este microservicio maneja los productos, pudiendo agregar, borrar, y actualizarlos.
+- CarritoService: Este microservicio maneja los carritos de los usuarios, donde se podran agregar distintos productos, pudiendo agregar productos al carrito, listar los productos en el carro y borrar todos los productos del carrito.
+- PedidoService: Este microservicio maneja los pedidos, confirmando los productos que un usuario tiene en su carrito, pudiendo listar los pedidos, confirmarlos, y cambiar el estado de estos entre Generado, Enviado y entregado.
 
 Tecnologías Utilizadas:
 - Mysql
@@ -15,9 +14,7 @@ Tecnologías Utilizadas:
 - Postman
 - Intellij
 
-Configuración de Bases de Datos: Indicar qué motor de base de datos usaron, cómo configuraron la conexión (application.properties), y qué tablas y campos definieron para cada microservicio.
-
-Endpoints y Pruebas Especificar los principales endpoints disponibles por microservicio (CRUD y llamadas entre servicios). Incluir descripciones de pruebas realizadas con Postman (mínimo 3 por micro-servicio).
+Configuración de Bases de Datos: Este proyecto fue configurado con MySQL en Largon, con puerbas unitarias en Postman para verificar su funcionalidad, cada microservicio accesible con un puerto distinto para evitar conflictos entre si.
 
 Integrantes del Equipo:
 Diego Carrillo/Eric Saavedra - usuarioservice 
@@ -25,14 +22,14 @@ Diego Carrillo/Eric Saavedra - productoservice
 _____________________ - CarritoService
 _____________________ - PedidoService
 
-Estructura del Repositorio Cada carpeta corresponde a un microservicio separado de forma individual, lo cual facilita su lectura, y evita confusion entre servicios.
+La estructura del Repositorio en cada carpeta corresponde a un microservicio separado de forma individual, lo cual facilita su lectura, y evita confusion entre servicios.
 
-perfulandia-microservices 
-├── UsuarioService 
-├── ProductoService 
-├── CarritoService 
-├── PedidoService
-└── README.md
+perfulandia_dev/microservicios
+├── Usuario
+├── Producto 
+├── Carrito 
+├── Pedido
+
 
 Colaboración en GitHub:
 La colaboracion fue bastante fluida y planificada, con el unico problema siendo al momento de la creacion inicial del repositorio, y la subida de los primeros dos servicios ya creados desde antes. Esto es debido
