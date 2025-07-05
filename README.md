@@ -16,7 +16,7 @@ Tecnologías Utilizadas:
 
 Configuración de Bases de Datos: Este proyecto fue configurado con MySQL en Largon, con puerbas unitarias en Postman para verificar su funcionalidad, cada microservicio accesible con un puerto distinto para evitar conflictos entre si.
 
-Integrantes del Equipo:
+Integrantes del Equipo::
 Diego Carrillo/Eric Saavedra - usuarioservice 
 Diego Carrillo/Eric Saavedra - productoservice 
 _____________________ - CarritoService
