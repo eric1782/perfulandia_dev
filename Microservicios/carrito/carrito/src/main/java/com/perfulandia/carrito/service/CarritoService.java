@@ -33,10 +33,11 @@ public class CarritoService {
         return repository.findByUsuarioId(usuarioId);
     }
 
+    // En CarritoService.java
     public void vaciar(Long usuarioId) {
-        List<ItemCarrito> items = listarPorUsuario(usuarioId);
-        for (ItemCarrito item : items) {
-            repository.deleteById(item.getId());
+        List<ItemCarrito> items = repository.findByUsuarioId(usuarioId);
+        if (items != null && !items.isEmpty()) {
+            repository.deleteAll(items);
         }
     }
 

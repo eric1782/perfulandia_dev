@@ -42,7 +42,7 @@ public class PedidoService {
             pedido.setEstado(EstadoPedido.GENERADO);
 
             Pedido guardado = repository.save(pedido);
-            System.out.println("✅ Pedido guardado: ID=" + guardado.getId() + ", Desc=" + guardado.getDescripcion());
+            System.out.println(" Pedido guardado: ID=" + guardado.getId() + ", Desc=" + guardado.getDescripcion());
 
             // 4. Descontar stock
             for (ItemCarrito item : items) {
@@ -51,9 +51,9 @@ public class PedidoService {
 
                 try {
                     restTemplate.put(urlProducto, null);
-                    System.out.println("🔻 Stock descontado producto ID " + item.getProductoId());
+                    System.out.println(" Stock descontado producto ID " + item.getProductoId());
                 } catch (Exception e) {
-                    System.out.println("❌ ERROR descontando stock producto ID " + item.getProductoId());
+                    System.out.println(" ERROR descontando stock producto ID " + item.getProductoId());
                     e.printStackTrace();
                     throw new RuntimeException("Error al descontar stock de producto ID: " + item.getProductoId());
                 }
@@ -62,9 +62,9 @@ public class PedidoService {
             // 5. Vaciar carrito
             try {
                 restTemplate.delete("http://localhost:8081/api/carritos/usuario/" + usuarioId);
-                System.out.println("🧹 Carrito vaciado para usuario " + usuarioId);
+                System.out.println(" Carrito vaciado para usuario " + usuarioId);
             } catch (Exception e) {
-                System.out.println("⚠️ ERROR al vaciar carrito: " + e.getMessage());
+                System.out.println(" ERROR al vaciar carrito: " + e.getMessage());
             }
 
             return guardado;
