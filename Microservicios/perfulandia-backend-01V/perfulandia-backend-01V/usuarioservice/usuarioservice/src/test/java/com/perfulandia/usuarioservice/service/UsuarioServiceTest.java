@@ -17,15 +17,15 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
-@ExtendWith(MockitoExtension.class)
+@ExtendWith(MockitoExtension.class) //activa la extencion de mockito
 class UsuarioServiceTest {
 
     @Mock
     private UsuarioRepository usuarioRepository;
 
     @InjectMocks
-    private UsuarioService usuarioService;
-
+    private UsuarioService usuarioService; //crea una instancia de servicio FUERA del before each
+                    //sirve para ahorrar el tener que definirlo fuera del beforeeach, util para implementacion de mas servicios o funcionalidades a futuro
     private Usuario usuario;
 
     @BeforeEach
@@ -83,7 +83,7 @@ class UsuarioServiceTest {
         assertEquals(1L, usuarioEncontrado.getId());
     }
 
-    // Test 4 (Extra)
+    // Test 4
     @Test
     @DisplayName("Test 4: Eliminar un usuario")
     void cuandoEliminarUsuario_noDeberiaLanzarExcepcion() {
